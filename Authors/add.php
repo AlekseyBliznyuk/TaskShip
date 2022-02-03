@@ -6,7 +6,7 @@ echo "<form action='add.php' method='post'>
 <p>Date_of_birth <input type='text' name='date_of_birth'></p>
 <p>Genre <input type='text' name='genre'></p>
 <input type='submit' value='Add'></form>";
-    // проверить, получены ли данные
+    //проверить, получены ли данные
 if (isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["date_of_birth"]) && isset($_POST["genre"])) {
     $connect = mysqli_connect("localhost", "root", "Leo2803leo", "literature");
     if ($connect->connect_error) {
@@ -19,7 +19,7 @@ if (isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["dat
     //запрос на вставку введенных данных
     $sql = "INSERT INTO literature.authors_info (id, firstname, lastname, date_of_birth, genre) 
             VALUES (NULL,'$firstname','$lastname','$date_of_birth','$genre') ";
-    // если работает, перенаправить на главную страницу
+    //если работает, перенаправить на главную страницу
     if ($connect->query($sql)) {
         header("Location: index.php");
     } else {
