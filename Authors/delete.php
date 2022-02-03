@@ -1,5 +1,5 @@
 <?php
-// проверить, получены ли данные
+    //проверить, получены ли данные
 if (isset($_POST["id"])) {
     $connect = mysqli_connect("localhost", "root", "Leo2803leo", "literature");
     if (!$connect) {
