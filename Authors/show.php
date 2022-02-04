@@ -1,14 +1,14 @@
 <?php
 
-//соедиение с БД
+    //соедиение с БД
 $connect = mysqli_connect("localhost", "root", "Leo2803leo", "literature");
-//выборка
+    //выборка
 $sql = "SELECT * FROM literature.authors_info";
-// кол-во авторов
+    // кол-во авторов
 $count = $connect->query($sql);
 $row_num = $count->num_rows;
 printf("<br>Всего " . $row_num . " авторов");
-// вывод таблицы
+    // вывод таблицы
 if ($result = mysqli_query($connect, $sql)) {
     echo "<table border='1'><tr><th>id</th><th>firstname</th><th>lastname</th><th>date_of_birth</th><th>genre</th><th>edit</th><th>delete</th></tr>";
     foreach ($result as $Author) {
